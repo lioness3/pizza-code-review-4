@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/scripts.js"></script>
+
+    <title>Hungry for Pizza?</title>
+  </head>
+  <body>
+    <div class="container">
+      <form class="order" action="index.html" method="post">
+        <div class="selectSize">
+          <h2>Select the desired pizza size</h2>
+          <label><input id="medium" type="radio" name="size" value="">Medium</label>
+          <label><input id="large" type="radio" name="size" value="">Large</label>
+        </div>
+        <div class="selectToppings">
+          <h2>Select type of pizza</h2>
+          <label><input id="xCheese" type="radio" name="toppings" value="">XTRA Cheese</label>
+          <label><input id ="xPep" type="radio" name="toppings" value="">XTRA Pepperoni</label>
+
+        </div>
+        <div class="selectCrust">
+          <h2>Select type of crust</h2>
+          <label><input id="thin" type="radio" name="crust" value="">Thin and Crispy</label>
+          <label><input id="deep" type="radio" name="crust" value="">Deep Dish</label>
+          <label><input id="glutenFree" type="radio" name="" value="">Gluten free</label>
+        </div>
+        <button id="placeOrder" type="submit" name="button"></button>
+      </form>
+
+      <div class="displayOrder">
+        <h1>Thank you for your business!</h1>
+        <h1>Your total is:<span id="displayPrice"></span></h1>
+      </div>
+
+    </div>
+
+  </body>
+</html>
