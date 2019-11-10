@@ -25,7 +25,7 @@ $(document).ready(function(){
     event.preventDefault();
   var large = $("input[id=large]:radio:checked").val();
   var extraMeat = $("input[id=xPep]:radio:checked").val();
-  var customPizza = new Pizza(large,extraMeat);
+  var customPizza = new Pizza(toppingSum,sizeSum);
   var sizeSum = customPizza.selectSize();
   var toppingSum = customPizza.selectTopping();
   var total = (sizeSum + toppingSum);
