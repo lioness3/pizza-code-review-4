@@ -1,37 +1,56 @@
-function Pizza(topping, size){
+function Pizza(topping, size, crust){
   this.topping = topping;
   this.size = size;
+  this.crust = crust;
   this.price = 0;
 }
 
-Pizza.prototype.selectSize = function(){
-// var large = document.getElementById("large").checked;
-  if (this.size = "medium"){
-    return this.price = 5;
-  }else if (this.size = "large"){
-    return this.price = 7;
- }
-};
-Pizza.prototype.selectTopping = function() {
-// var extraMeat = document.getElementById("xPep").checked;
-  if (this.topping = "cheese"){
-      return this.price = 6;
- }else if (this.topping = "xPep"){
-      return this.price = 4;
+  Pizza.prototype.selectSize = function(){
 
- }
-};
+    if (this.size = medium.checked)
+    {
+       this.price = 5;
+    }else if (this.size = large.checked){
+       this.price = 7;
+   }else{
+     this.price = 0;
+   }
+   return this.price;
+  };
+  Pizza.prototype.selectTopping = function() {
+    if (this.topping = xCheese.checked){
+         this.price = 6;
+   }else if (this.topping =  xPep.checked){
+         this.price = 8;
+   }else{
+     this.price = 0;
+   }
+   return this.price;
+  };
+  Pizza.prototype.selectCrust = function() {
+    if (this.crust = thin.checked){
+         this.price = 4;
+   }else if (this.crust = deep.checked){
+         this.price = 8;
+   }else if (this.crust = glutenFree.checked){
+         this.price = 11;
+   }else{
+     this.price = 0;
+   }
+   return this.price;
+  };
 $(document).ready(function(){
   $("#order").submit(function(event){
     event.preventDefault();
-  // var large = $("input[id=large]:radio:checked").val();
-  // var extraMeat = $("input[id=xPep]:radio:checked").val();
+
   var customPizza = new Pizza(toppingSum,sizeSum);
-  var sizeSum = customPizza.selectSize();
+  var sizeSum =  parseInt(customPizza.selectSize());
   var toppingSum = customPizza.selectTopping();
-  var total = (toppingSum + sizeSum);
+  var crustSum = customPizza.selectCrust();
+  var total = (toppingSum + sizeSum + crustSum);
   console.log(sizeSum);
   console.log(toppingSum);
+  console.log(crustSum);
 $("#displayPrice").text(total);
 
   });
