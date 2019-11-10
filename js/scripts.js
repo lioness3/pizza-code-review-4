@@ -5,30 +5,34 @@ function Pizza(topping, size){
 }
 
 Pizza.prototype.selectSize = function(){
-
-  if (this.size === "large"){
+// var large = document.getElementById("large").checked;
+  if (this.size = "lg"){
     return this.price += 7;
   }else {
     return this.price += 4;
+    console.log(this.price);
  }
 };
 Pizza.prototype.selectTopping = function() {
-  if (this.topping === "extraMeat"){
+// var extraMeat = document.getElementById("xPep").checked;
+  if (this.topping = "xPep"){
       return this.price += 15;
  }else{
       return this.price += 4;
+      console.log(this.price);
  }
 };
-
 $(document).ready(function(){
   $("#order").submit(function(event){
     event.preventDefault();
-  var large = $("input[id=large]:radio:checked").val();
-  var extraMeat = $("input[id=xPep]:radio:checked").val();
+  // var large = $("input[id=large]:radio:checked").val();
+  // var extraMeat = $("input[id=xPep]:radio:checked").val();
   var customPizza = new Pizza(toppingSum,sizeSum);
   var sizeSum = customPizza.selectSize();
   var toppingSum = customPizza.selectTopping();
-  var total = (sizeSum + toppingSum);
+  var total = (toppingSum + sizeSum);
+  console.log(sizeSum);
+  console.log(toppingSum);
 $("#displayPrice").text(total);
 
   });
