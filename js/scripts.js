@@ -6,20 +6,19 @@ function Pizza(topping, size){
 
 Pizza.prototype.selectSize = function(){
 // var large = document.getElementById("large").checked;
-  if (this.size = "lg"){
-    return this.price += 7;
-  }else {
-    return this.price += 4;
-    console.log(this.price);
+  if (this.size = "medium"){
+    return this.price = 5;
+  }else if (this.size = "large"){
+    return this.price = 7;
  }
 };
 Pizza.prototype.selectTopping = function() {
 // var extraMeat = document.getElementById("xPep").checked;
-  if (this.topping = "xPep"){
-      return this.price += 15;
- }else{
-      return this.price += 4;
-      console.log(this.price);
+  if (this.topping = "cheese"){
+      return this.price = 6;
+ }else if (this.topping = "xPep"){
+      return this.price = 4;
+
  }
 };
 $(document).ready(function(){
