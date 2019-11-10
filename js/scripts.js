@@ -18,10 +18,12 @@ function Pizza(topping, size, crust){
    return this.price;
   };
   Pizza.prototype.selectTopping = function() {
-    if (this.topping = xCheese.checked){
+    if (this.topping = cheese.checked){
          this.price = 6;
-   }else if (this.topping =  xPep.checked){
+   }else if (this.topping =  pep.checked){
          this.price = 8;
+   }else if (this.topping =  special.checked){
+         this.price = 20;
    }else{
      this.price = 0;
    }
