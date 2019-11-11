@@ -25,7 +25,7 @@ function Pizza(topping, size, crust){
    }else if (this.topping =  special.checked){
          this.price = 20;
    }else{
-     warning;
+     // warning;
    }
    return this.price;
   };
@@ -37,27 +37,33 @@ function Pizza(topping, size, crust){
    }else if (this.crust = glutenFree.checked){
          this.price = 11;
    }else{
-     warning;
+     // warning;
    }
    return this.price;
   };
+
 // document.getElementByClass("clearRadio").checked = false;
 $(document).ready(function(){
-  var warning = alert("Please select a topping AND crust choice.");
   $("#order").submit(function(event){
     event.preventDefault();
- $("#order").removeAttr("checked");
-  var customPizza = new Pizza(toppingSum,sizeSum);
-  var sizeSum =  parseInt(customPizza.selectSize());
-  var toppingSum = customPizza.selectTopping();
-  var crustSum = customPizza.selectCrust();
-  var total = (toppingSum + sizeSum + crustSum);
-  console.log(sizeSum);
-  console.log(toppingSum);
-  console.log(crustSum);
-$("#displayPrice").text(total);
-
-
+    var customPizza = new Pizza(toppingSum,sizeSum);
+    var sizeSum =  parseInt(customPizza.selectSize());
+    var toppingSum = customPizza.selectTopping();
+    var crustSum = customPizza.selectCrust();
+    var total = (toppingSum + sizeSum + crustSum);
+    console.log(sizeSum);
+    console.log(toppingSum);
+    console.log(crustSum);
+    $("#displayPrice").text(total);
+    $("#order").toggle();
+    $("input[name=size]").prop("checked", false);
+    $("input[name=topping]").prop("checked", false);
+    $("input[name=crust]").prop("checked", false);
+    });
+  $("#goBack").click(function(event){
+    event.preventDefault();
+    $("#order").toggle();
+    var total = [];
   });
 });
   // var element = document.getElementById(id)
