@@ -25,7 +25,7 @@ function Pizza(topping, size, crust){
    }else if (this.topping =  special.checked){
          this.price = 20;
    }else{
-     this.price = 0;
+     warning;
    }
    return this.price;
   };
@@ -37,11 +37,12 @@ function Pizza(topping, size, crust){
    }else if (this.crust = glutenFree.checked){
          this.price = 11;
    }else{
-     this.price = 0;
+     warning;
    }
    return this.price;
   };
 $(document).ready(function(){
+  var warning = alert("Please select a topping AND crust choice.");
   $("#order").submit(function(event){
     event.preventDefault();
 
