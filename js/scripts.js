@@ -63,7 +63,7 @@ $(document).ready(function(){
   $("#goBack").click(function(event){
     event.preventDefault();
     $("#order").toggle();
-    var total = [];
+    $("#displayPrice").text("");
   });
 });
   // var element = document.getElementById(id)
