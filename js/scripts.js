@@ -41,11 +41,12 @@ function Pizza(topping, size, crust){
    }
    return this.price;
   };
+// document.getElementByClass("clearRadio").checked = false;
 $(document).ready(function(){
   var warning = alert("Please select a topping AND crust choice.");
   $("#order").submit(function(event){
     event.preventDefault();
-
+ $("#order").removeAttr("checked");
   var customPizza = new Pizza(toppingSum,sizeSum);
   var sizeSum =  parseInt(customPizza.selectSize());
   var toppingSum = customPizza.selectTopping();
@@ -55,6 +56,7 @@ $(document).ready(function(){
   console.log(toppingSum);
   console.log(crustSum);
 $("#displayPrice").text(total);
+
 
   });
 });
