@@ -1,6 +1,12 @@
 .jumbotron{
   background-color: #B98B9E;
 }
+h1{
+  font-family: cursive;
+  font-weight: bold;
+  margin-bottom: 35pt;
+
+}
 h3{
   color: navy;
 }
@@ -15,4 +21,3 @@ label{
 }
 .goBack{
   text-align: center;
-}
