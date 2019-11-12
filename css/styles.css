@@ -1,0 +1,18 @@
+.jumbotron{
+  background-color: #B98B9E;
+}
+h3{
+  color: navy;
+}
+label{
+  color: white;
+}
+.displayOrder{
+  text-align: center;
+}
+#redText{
+  color: red;
+}
+.goBack{
+  text-align: center;
+}
