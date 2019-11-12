@@ -13,12 +13,12 @@ function Pizza(topping, size, crust){
       this.price = 7;
     }else {
       alert("Please, choose either Medium or Large!")
-      ;
+// Clears totaled price if size is not selected.
+      document.getElementById("displayPrice").reset();
     }
     return this.price;
     };
   Pizza.prototype.selectTopping = function(){
-
     if (this.topping = cheese.checked){
       this.price = 6;
     }else if (this.topping =  pep.checked){
@@ -26,12 +26,12 @@ function Pizza(topping, size, crust){
     }else if (this.topping =  special.checked){
       this.price = 20;
     }else{
+//Does not add to the price if no selection is made.      
       this.price = 0;
     }
     return this.price;
     };
   Pizza.prototype.selectCrust = function(){
-
     if (this.crust = thin.checked){
       this.price = 4;
    }else if (this.crust = deep.checked){
@@ -40,8 +40,7 @@ function Pizza(topping, size, crust){
      this.price = 11;
    }else{
      alert("Please select a crust!")
-
-     document.getElementById("displayPrice").reset();
+// Clears totaled price if crust is not selected.
    }
    return this.price;
   };
