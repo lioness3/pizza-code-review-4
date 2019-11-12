@@ -12,7 +12,8 @@ function Pizza(topping, size, crust){
     }else if (this.size = large.checked){
       this.price = 7;
     }else {
-      alert("Please, choose either Medium or Large!");
+      alert("Please, choose either Medium or Large!")
+      ;
     }
     return this.price;
     };
@@ -37,8 +38,11 @@ function Pizza(topping, size, crust){
      this.price = 8;
    }else if (this.crust = glutenFree.checked){
      this.price = 11;
-   }else{}
+   }else{
+     alert("Please select a crust!")
 
+     document.getElementById("displayPrice").reset();
+   }
    return this.price;
   };
 //UI
