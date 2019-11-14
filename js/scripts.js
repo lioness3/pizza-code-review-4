@@ -1,15 +1,15 @@
 //Buisiness Logic
 function Pizza(topping, size, crust){
-  this.topping = topping;
+  this.topping = topping || 0;
   this.size = size;
   this.crust = crust;
   this.price = 0
 }
 //Uses ID in radio input to tell what has been checked
   Pizza.prototype.cost = function(){
-  this.price += (this.topping == "checked");
-  this.price += (this.size == "checked");
-  this.price += (this.crust == "checked");
+  this.price += parseInt(this.topping);
+  this.price += parseInt(this.size);
+  this.price += parseInt(this.crust);
   return this.price;
 };
 
@@ -22,12 +22,13 @@ function Pizza(topping, size, crust){
 $(document).ready(function(){
   $("#order").submit(function(event){
     event.preventDefault();
-    var topping = parseInt($("input:radio[name='topping']:checked").val());
-    var size = parseInt($("input:radio[name='size']:checked").val());
-    var crust = parseInt($("input:radio[name='crust']:checked").val());
-console.log(topping);
+    var topping = $("input:radio[name='topping']:checked").val();
+    var size = $("input:radio[name='size']:checked").val();
+    var crust = $("input:radio[name='crust']:checked").val();
     var customPizza = new Pizza(topping, size, crust);
-    console.log(customPizza.cost.price);
+
+    customPizza.cost();
+
     $("#displayPrice").text(customPizza.price);
     $("#order").hide();
 //Clears radio buttons
