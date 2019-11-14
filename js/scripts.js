@@ -7,9 +7,9 @@ function Pizza(topping, size, crust){
 }
 //Uses ID in radio input to tell what has been checked
   Pizza.prototype.selectSize = function(){
-    if (this.size = medium.checked){
+    if (this.size = "medium"){
       this.price = 5;
-    }else if (this.size = large.checked){
+    }else if (this.size = "large"){
       this.price = 7;
     }else {
       alert("Please, choose either Medium or Large!")
@@ -19,24 +19,24 @@ function Pizza(topping, size, crust){
     return this.price;
     };
   Pizza.prototype.selectTopping = function(){
-    if (this.topping = cheese.checked){
+    if (this.topping = "cheese"{
       this.price = 6;
-    }else if (this.topping =  pep.checked){
+    }else if (this.topping =  "pep"){
       this.price = 8;
-    }else if (this.topping =  special.checked){
+    }else if (this.topping =  "special"){
       this.price = 20;
     }else{
-//Does not add to the price if no selection is made.      
+//Does not add to the price if no selection is made.
       this.price = 0;
     }
     return this.price;
     };
   Pizza.prototype.selectCrust = function(){
-    if (this.crust = thin.checked){
+    if (this.crust = "thin"){
       this.price = 4;
-   }else if (this.crust = deep.checked){
+   }else if (this.crust = "deep"){
      this.price = 8;
-   }else if (this.crust = glutenFree.checked){
+   }else if (this.crust = "glutenFree"){
      this.price = 11;
    }else{
      alert("Please select a crust!")
