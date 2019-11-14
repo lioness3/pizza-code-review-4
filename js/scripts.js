@@ -7,9 +7,9 @@ function Pizza(topping, size, crust){
 }
 //Uses ID in radio input to tell what has been checked
   Pizza.prototype.cost = function(){
-  this.price += $(parseInt(this.topping));
-  this.price += $(parseInt(this.size));
-  this.price += $(parseInt(this.crust));
+  this.price += parseInt("(this.topping):checked");
+  this.price += parseInt("(this.size):checked");
+  this.price += parseInt("(this.crust):checked");
   return this.price;
 };
 
