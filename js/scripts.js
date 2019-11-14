@@ -3,17 +3,14 @@ function Pizza(topping, size, crust){
   this.topping = topping;
   this.size = size;
   this.crust = crust;
-  this.price = 0;
+  this.price = 0
 }
 //Uses ID in radio input to tell what has been checked
   Pizza.prototype.cost = function(){
-  this.topping == "checked";
-  this.size == "checked";
-  this.crust == "checked";
-
-  return this.price;
+  this.price += "radio.checked";
 
 };
+
 //      alert("Please select a crust!")
 //
 // // Clears totaled price if crust is not selected.
@@ -23,9 +20,10 @@ function Pizza(topping, size, crust){
 $(document).ready(function(){
   $("#order").submit(function(event){
     event.preventDefault();
-    var topping = $("input[name='topping']:checked").val();
-    var size = $("input[name='size']:checked").val();
-    var crust = $("input[name='crust']:checked").val();
+    var topping = $("input:radio[name='topping']:checked").val();
+    var size = $("input:radio[name='size']:checked").val();
+    var crust = $("input:radio[name='crust']:checked").val();
+
     var customPizza = new Pizza(topping, size, crust);
     customPizza.cost;
     $("#displayPrice").text(customPizza.price);
