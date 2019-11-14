@@ -7,8 +7,10 @@ function Pizza(topping, size, crust){
 }
 //Uses ID in radio input to tell what has been checked
   Pizza.prototype.cost = function(){
-  this.price += "radio.checked";
-
+  this.price += $(parseInt(this.topping));
+  this.price += $(parseInt(this.size));
+  this.price += $(parseInt(this.crust));
+  return this.price;
 };
 
 //      alert("Please select a crust!")
@@ -25,7 +27,7 @@ $(document).ready(function(){
     var crust = $("input:radio[name='crust']:checked").val();
 
     var customPizza = new Pizza(topping, size, crust);
-    customPizza.cost;
+    console.log(customPizza.price);
     $("#displayPrice").text(customPizza.price);
     $("#order").hide();
 //Clears radio buttons
